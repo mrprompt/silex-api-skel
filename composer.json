@@ -4,7 +4,6 @@
   "license" : "BSD-3-Clause",
   "homepage" : "http://github.com/mrprompt/silex-skel",
   "type": "project",
-  "version": "0.0.1",
   "autoload" : {
     "psr-0" : {
       "Common": "src/",

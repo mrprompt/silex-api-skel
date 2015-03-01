@@ -9,7 +9,6 @@ namespace Skel\Controller;
 
 use Skel\Application;
 use Skel\View\Json as View;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Index Controller
