@@ -112,4 +112,28 @@ class UserTest extends WebTestCase
 
         $this->assertEquals(204, $client->getResponse()->getStatusCode());
     }
+
+    /**
+     * @test
+     * @dataProvider validObjects
+     */
+    public function postUserWithFullParameters($obj)
+    {
+        $client = $this->createClient();
+        $client->request('POST', '/user/', $obj, [], $this->header, json_encode($obj));
+
+        $this->assertEquals(201, $client->getResponse()->getStatusCode());
+    }
+
+    /**
+     * @test
+     * @dataProvider validObjects
+     */
+    public function postUserWithoutParameters($obj)
+    {
+        $client = $this->createClient();
+        $client->request('POST', '/user/', [], [], $this->header);
+
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+    }
 }

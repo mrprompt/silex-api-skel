@@ -52,4 +52,13 @@ interface User
      * @return View
      */
     public function delete(Application $app, Request $request);
+
+    /**
+     * Create an user
+     *
+     * @param  Application $app
+     * @param  Request $request
+     * @return View
+     */
+    public function create(Application $app, Request $request);
 }

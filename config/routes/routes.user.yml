@@ -24,3 +24,8 @@ user.delete:
     methods: [DELETE]
     requirements:
       id: \d+
+
+user.create:
+    path: /
+    defaults: { _controller: 'Skel\Controller\Users\User::create' }
+    methods: [POST]

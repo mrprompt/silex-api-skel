@@ -74,4 +74,20 @@ class User
 
         return new View($user, View::HTTP_NO_CONTENT);
     }
+
+    /**
+     * Create an user
+     *
+     * @param  Application $app
+     * @param  Request $request
+     * @return View
+     */
+    public function create(Application $app, Request $request)
+    {
+        $app['profile'] = $app[UserService::USER_USER]->create($request);
+
+        $app['dispatcher']->dispatch('user.create');
+
+        return new View($app['profile'], View::HTTP_CREATED);
+    }
 }

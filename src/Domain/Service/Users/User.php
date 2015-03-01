@@ -62,4 +62,11 @@ interface User extends ServiceProviderInterface
      * @return bool
      */
     public function remove($id);
+
+    /**
+     * @param Request $request
+     * @param UserService $profileService
+     * @return UserModel
+     */
+    public function create(Request $request);
 }

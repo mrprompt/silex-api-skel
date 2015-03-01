@@ -152,4 +152,18 @@ class User implements UserServiceInterface
 
         return true;
     }
+
+    /**
+     * @param Request $request
+     * @return \Skel\Entity\Users\User
+     */
+    public function create(Request $request)
+    {
+        /* @var $user \Skel\Entity\Users\User */
+        $user = UserFactory::create($request);
+
+        $this->save($user);
+
+        return $user;
+    }
 }
