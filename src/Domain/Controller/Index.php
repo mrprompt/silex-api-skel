@@ -8,7 +8,6 @@
 namespace Domain\Controller;
 
 use Skel\Application;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Index Controller Interface
