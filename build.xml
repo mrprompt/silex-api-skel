@@ -82,7 +82,7 @@
 
     <target name="test">
         <phingcall target="fixtures" />
-        
+
         <exec executable="${project.bindir}phpunit" passthru="true" checkreturn="true">
             <arg value="--stop-on-failure" />
         </exec>
