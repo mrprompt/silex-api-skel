@@ -1,0 +1,7 @@
+.idea/
+.c9/
+vendor
+config/config.yml
+data/tmp/*.log
+data/tmp/*.html
+data/*.sqlite

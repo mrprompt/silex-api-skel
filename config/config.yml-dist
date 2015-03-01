@@ -1,0 +1,25 @@
+# Banco de dados
+database:
+    driver: pdo_sqlite
+    host: 127.0.0.1
+    dbname: test
+    user:
+    password:
+    path: data/app.sqlite
+
+# emails de contato
+email:
+    config:
+        host: smtp.gmail.com
+        port: 587
+        username:
+        password:
+        encryption: tls
+        auth_mode: login
+
+# configurações do log
+log:
+    name: Default
+    logfile: data/tmp/api.log
+    permission: 0644
+    level: INFO
