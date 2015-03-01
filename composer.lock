@@ -4,60 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c09ff9302533ca10a0a963bbf2689b7",
+    "hash": "dd32918367121d8159e58e45deafb3b2",
     "packages": [
-        {
-            "name": "cloudinary/cloudinary_php",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "f3f1433d87cd73f6225acf92ec928ac3c9cd3ab0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/f3f1433d87cd73f6225acf92ec928ac3c9cd3ab0",
-                "reference": "f3f1433d87cd73f6225acf92ec928ac3c9cd3ab0",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ],
-                "files": [
-                    "src/Helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cloudinary",
-                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
-                }
-            ],
-            "description": "Cloudinary PHP SDK",
-            "homepage": "https://github.com/cloudinary/cloudinary_php",
-            "keywords": [
-                "cdn",
-                "cloud",
-                "cloudinary",
-                "image management",
-                "sdk"
-            ],
-            "time": "2015-02-10 15:08:13"
-        },
         {
             "name": "deralex/yaml-config-service-provider",
             "version": "1.0.0",
@@ -891,48 +839,6 @@
             "time": "2014-12-16 13:45:01"
         },
         {
-            "name": "ircmaxell/password-compat",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ircmaxell/password_compat.git",
-                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/5c5cde8822a69545767f7c7f3058cb15ff84614c",
-                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/password.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
-                    "homepage": "http://blog.ircmaxell.com"
-                }
-            ],
-            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
-            "homepage": "https://github.com/ircmaxell/password_compat",
-            "keywords": [
-                "hashing",
-                "password"
-            ],
-            "time": "2014-11-20 16:49:30"
-        },
-        {
             "name": "jms/metadata",
             "version": "1.5.1",
             "source": {
@@ -1090,137 +996,6 @@
             "time": "2014-03-18 08:39:00"
         },
         {
-            "name": "knplabs/console-service-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/ConsoleServiceProvider.git",
-                "reference": "1f1a3315409814d01702a47a8823549c6996de41"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/ConsoleServiceProvider/zipball/1f1a3315409814d01702a47a8823549c6996de41",
-                "reference": "1f1a3315409814d01702a47a8823549c6996de41",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "symfony/console": "~2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Knplabs",
-                    "homepage": "http://knplabs.com"
-                }
-            ],
-            "description": "console service provider for Silex",
-            "homepage": "http://knplabs.com",
-            "keywords": [
-                "console",
-                "silex"
-            ],
-            "time": "2013-06-13 12:43:39"
-        },
-        {
-            "name": "madcoda/php-youtube-api",
-            "version": "v1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madcoda/php-youtube-api.git",
-                "reference": "b4d888316974012c5d98d85bf4bca1c6fe06b8be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/madcoda/php-youtube-api/zipball/b4d888316974012c5d98d85bf4bca1c6fe06b8be",
-                "reference": "b4d888316974012c5d98d85bf4bca1c6fe06b8be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Madcoda": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Madcoda",
-                    "email": "jason@madcoda.com"
-                }
-            ],
-            "description": "PHP wrapper for the Youtube Data API v3",
-            "keywords": [
-                "api",
-                "madcoda",
-                "video",
-                "youtube"
-            ],
-            "time": "2014-07-07 04:59:39"
-        },
-        {
-            "name": "mardy-git/hmac",
-            "version": "v2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mardy-git/hmac.git",
-                "reference": "d7335c02be8bb071c48b5c87221ea6a6497b3796"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mardy-git/hmac/zipball/d7335c02be8bb071c48b5c87221ea6a6497b3796",
-                "reference": "d7335c02be8bb071c48b5c87221ea6a6497b3796",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Mardy\\Hmac": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "WTFPL"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Bardsley",
-                    "email": "me@mic-b.co.uk"
-                }
-            ],
-            "description": "A keyed-Hash Message Authentication Code (HMAC). Used for application to application authentication.",
-            "homepage": "http://github.com/mardy-git/hmac",
-            "keywords": [
-                "Authentication",
-                "bcrypt",
-                "hash",
-                "hmac",
-                "pbkdf2"
-            ],
-            "time": "2014-09-22 18:14:30"
-        },
-        {
             "name": "monolog/monolog",
             "version": "1.12.0",
             "source": {
@@ -1291,56 +1066,6 @@
                 "psr-3"
             ],
             "time": "2014-12-29 21:29:35"
-        },
-        {
-            "name": "njasm/soundcloud",
-            "version": "2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/njasm/soundcloud.git",
-                "reference": "9d0e7e3fa3af689282d98f268a17824d990f3469"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/njasm/soundcloud/zipball/9d0e7e3fa3af689282d98f268a17824d990f3469",
-                "reference": "9d0e7e3fa3af689282d98f268a17824d990f3469",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Njasm\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nelson João Morais",
-                    "email": "njmorais@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Soundcloud API Wrapper written in PHP with OAuth 2.0 support",
-            "homepage": "http://github.com/njasm/soundcloud",
-            "keywords": [
-                "api",
-                "soundcloud",
-                "webservice",
-                "webservices"
-            ],
-            "time": "2014-11-19 12:10:08"
         },
         {
             "name": "phing/phing",
@@ -1676,72 +1401,6 @@
             "time": "2015-02-20 12:36:47"
         },
         {
-            "name": "rhumsaa/uuid",
-            "version": "2.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ramsey/uuid.git",
-                "reference": "cca98c652cac412c9c2f109c69e5532f313435fc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/cca98c652cac412c9c2f109c69e5532f313435fc",
-                "reference": "cca98c652cac412c9c2f109c69e5532f313435fc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "doctrine/dbal": ">=2.3",
-                "moontoast/math": "~1.1",
-                "phpunit/phpunit": "~4.1",
-                "satooshi/php-coveralls": "~0.6",
-                "symfony/console": "~2.3"
-            },
-            "suggest": {
-                "doctrine/dbal": "Allow the use of a UUID as doctrine field type.",
-                "moontoast/math": "Support for converting UUID to 128-bit integer (in string form).",
-                "symfony/console": "Support for use of the bin/uuid command line tool."
-            },
-            "bin": [
-                "bin/uuid"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rhumsaa\\Uuid\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Huizendveld",
-                    "email": "marijn.huizendveld@gmail.com"
-                },
-                {
-                    "name": "Ben Ramsey",
-                    "homepage": "http://benramsey.com"
-                }
-            ],
-            "description": "A PHP 5.3+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
-            "homepage": "https://github.com/ramsey/uuid",
-            "keywords": [
-                "guid",
-                "identifier",
-                "uuid"
-            ],
-            "time": "2014-11-09 18:42:56"
-        },
-        {
             "name": "silex/silex",
             "version": "v1.2.3",
             "source": {
@@ -1822,57 +1481,6 @@
                 "microframework"
             ],
             "time": "2015-01-20 16:45:58"
-        },
-        {
-            "name": "swiftmailer/swiftmailer",
-            "version": "v4.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "28ac862c8d5ccbe5c7ee8cecc07e1ca9d5195b56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/28ac862c8d5ccbe5c7ee8cecc07e1ca9d5195b56",
-                "reference": "28ac862c8d5ccbe5c7ee8cecc07e1ca9d5195b56",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "lib/swift_required.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Chris Corbyn"
-                }
-            ],
-            "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.org",
-            "keywords": [
-                "mail",
-                "mailer"
-            ],
-            "time": "2012-06-17 20:55:34"
         },
         {
             "name": "symfony/config",
@@ -2390,63 +1998,6 @@
             "time": "2015-01-25 04:39:26"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.18.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
-                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.18-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Twig_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
-                    "role": "Contributors"
-                }
-            ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2015-01-25 17:32:08"
-        },
-        {
             "name": "useallfive/doctrine-data-fixtures-command",
             "version": "dev-master",
             "source": {
@@ -2495,47 +2046,6 @@
                 "web"
             ],
             "time": "2013-10-30 02:08:37"
-        },
-        {
-            "name": "vimeo/vimeo-api",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vimeo/vimeo.php.git",
-                "reference": "e1552376ce7bb2e90ea56d127a95ea30b8fe770e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/vimeo.php/zipball/e1552376ce7bb2e90ea56d127a95ea30b8fe770e",
-                "reference": "e1552376ce7bb2e90ea56d127a95ea30b8fe770e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Vimeo\\": "src/Vimeo"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Vimeo",
-                    "homepage": "http://vimeo.com"
-                }
-            ],
-            "description": "Official PHP library for the Vimeo API.",
-            "homepage": "https://github.com/vimeo/vimeo.php",
-            "keywords": [
-                "video",
-                "vimeo"
-            ],
-            "time": "2014-10-23 20:06:03"
         }
     ],
     "packages-dev": [
@@ -3580,7 +3090,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "cloudinary/cloudinary_php": 20,
         "dflydev/composer-autoload": 20,
         "dflydev/psr0-resource-locator": 20,
         "dflydev/psr0-resource-locator-composer": 20,
@@ -3588,7 +3097,6 @@
         "dflydev/psr0-resource-locator-composer-service-provider": 20,
         "doctrine/migrations": 20,
         "useallfive/doctrine-data-fixtures-command": 20,
-        "knplabs/console-service-provider": 20,
         "mockery/mockery": 20
     },
     "prefer-stable": false,

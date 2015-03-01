@@ -17,7 +17,6 @@ use RecursiveIteratorIterator;
 use Silex\Application as SilexApplication;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\MonologServiceProvider;
-use Silex\Provider\SwiftmailerServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -138,13 +137,6 @@ class Application extends SilexApplication
                         "driver" => "array"
                     ]
                 ]
-            ]
-        );
-
-        $this->register(
-            new SwiftmailerServiceProvider(),
-            [
-                'swiftmailer.options' => $this['config']['email']['config']
             ]
         );
 
