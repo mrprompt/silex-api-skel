@@ -10,6 +10,7 @@ namespace Skel\Controller\Users;
 use Skel\Application;
 use Skel\View\Json as View;
 use Skel\Service\Users\User as UserService;
+use Skel\Event\User\Create as CreateEvent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -86,7 +87,7 @@ class User
     {
         $app['profile'] = $app[UserService::USER_USER]->create($request);
 
-        $app['dispatcher']->dispatch('user.create');
+        $app['dispatcher']->dispatch(CreateEvent::NAME);
 
         return new View($app['profile'], View::HTTP_CREATED);
     }

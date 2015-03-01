@@ -19,7 +19,7 @@ final class Create
     /**
      * @var string
      */
-    const NAME = 'user.create';
+    const NAME = 'events.user.create';
 
     /**
      * @var Application
