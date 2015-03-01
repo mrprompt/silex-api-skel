@@ -1,8 +1,8 @@
 {
-  "name" : "mrprompt/silex-skel",
+  "name" : "mrprompt/silex-api-skel",
   "description" : "Silex REST Application Skeleton",
   "license" : "BSD-3-Clause",
-  "homepage" : "http://github.com/mrprompt/silex-skel",
+  "homepage" : "https://github.com/mrprompt/silex-api-skel.git",
   "type": "project",
   "autoload" : {
     "psr-0" : {
