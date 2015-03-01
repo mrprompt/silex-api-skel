@@ -5,8 +5,7 @@ API RESTFull
 
 branch master status
 [![Build Status](https://travis-ci.org/mrprompt/silex-api-skel.svg)](https://travis-ci.org/mrprompt/silex-api-skel)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b337e834-dd26-46fd-ad35-82e2afbc5f7d/mini.png)](https://insight.sensiolabs.com/projects/b337e834-dd26-46fd-ad35-82e2afbc5f7d)
-
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/78105a12-81f1-4421-bee8-0f0d73a6b828/mini.png)](https://insight.sensiolabs.com/projects/78105a12-81f1-4421-bee8-0f0d73a6b828)
 Instalação
 ==========
 
