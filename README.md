@@ -4,7 +4,7 @@ Skeleton API
 API RESTFull
 
 branch master status
-[![Build Status](https://travis-ci.org/mrprompt/silex-api-skel.png?branch=master)](https://travis-ci.org/mrprompt/silex-api-skel)
+[![Build Status](https://travis-ci.org/mrprompt/silex-api-skel.svg)](https://travis-ci.org/mrprompt/silex-api-skel)
 
 Instalação
 ==========
