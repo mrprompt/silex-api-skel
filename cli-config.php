@@ -16,12 +16,14 @@ use Doctrine\DBAL\Migrations\Tools\Console\Command\StatusCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
 use UseAllFive\Command\LoadDataFixturesDoctrineCommand;
+use Symfony\Component\Console\Helper\DialogHelper;
 
 $app = require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
 $helperSet = new HelperSet(array(
     'db' => new ConnectionHelper($app['orm.em']->getConnection()),
     'em' => new EntityManagerHelper($app['orm.em']),
+    'dialog' => new DialogHelper(),
 ));
 
 $commands = array(
