@@ -42,6 +42,8 @@ $app->setConfigFile([
     'config' . DS . 'config.yml',
     'config' . DS . 'orm.yml',
     'config' . DS . 'global.yml',
+    'config' . DS . 'services.yml',
+    'config' . DS . 'listeners.yml',
 ]);
 $app->loadServices();
 $app->loadControllers();

@@ -7,13 +7,10 @@
  */
 namespace Skel;
 
-use Common\Iterator\Filter\File as FileFilterIterator;
 use DerAlex\Silex\YamlConfigServiceProvider;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Dflydev\Silex\Provider\Psr0ResourceLocator\Composer\ComposerResourceLocatorServiceProvider;
 use Dflydev\Silex\Provider\Psr0ResourceLocator\Psr0ResourceLocatorServiceProvider;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
 use Silex\Application as SilexApplication;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -140,23 +137,7 @@ class Application extends SilexApplication
             ]
         );
 
-        $path = __DIR__ . DS . 'Service';
-        $extensions = ["php"];
-
-        $recursiveDirectory = new RecursiveDirectoryIterator($path);
-        $recursiveIterator = new RecursiveIteratorIterator($recursiveDirectory);
-        $filtered = new FileFilterIterator($recursiveIterator, $extensions);
-
-        /* @var $fileInfo \SplFileInfo */
-        foreach ($filtered as $fileInfo) {
-            $class = __NAMESPACE__ . str_replace(
-                [__DIR__, DS],
-                ['', '\\'],
-                $fileInfo->getPathname()
-            );
-
-            $class = str_replace('.php', '', $class);
-
+        foreach ($this['config']['services'] as $service => $class) {
             $this->register(new $class);
         }
     }
@@ -170,7 +151,7 @@ class Application extends SilexApplication
     {
         $this['routes'] = $this->extend(
             'routes',
-            function (RouteCollection $routes, Application $app) {
+            function (RouteCollection $routes) {
                 $loader = new YamlFileLoader(new FileLocator(__DIR__ . '/../../config'));
                 $collection = $loader->load('routes.yml');
 
@@ -188,23 +169,7 @@ class Application extends SilexApplication
      */
     public function loadListeners()
     {
-        $path = __DIR__ . DS . 'Event';
-        $extensions = ["php"];
-
-        $recursiveDirectory = new RecursiveDirectoryIterator($path);
-        $recursiveIterator = new RecursiveIteratorIterator($recursiveDirectory);
-        $filtered = new FileFilterIterator($recursiveIterator, $extensions);
-
-        /* @var $fileInfo \SplFileInfo */
-        foreach ($filtered as $fileInfo) {
-            $class = __NAMESPACE__ . str_replace(
-                [__DIR__, DS],
-                ['', '\\'],
-                $fileInfo->getPathname()
-            );
-
-            $class = str_replace('.php', '', $class);
-
+        foreach ($this['config']['listeners'] as $service => $class) {
             $this['dispatcher']->addListener($class::NAME, [new $class($this), 'dispatch']);
         }
     }

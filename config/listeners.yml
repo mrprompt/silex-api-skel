@@ -1,0 +1,3 @@
+# event listeres
+listeners:
+  user.create: \Skel\Event\User\Create
