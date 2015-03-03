@@ -30,8 +30,8 @@
 
     <logging>
         <log type="coverage-text" target="data/tmp/coverage.log"/>
-        <log type="coverage-html" target="data/tmp/coverage"/>
+        <log type="coverage-xml" target="data/tmp/coverage.xml"/>
         <log type="testdox-text" target="data/tmp/testdox.log"/>
-        <log type="testdox-html" target="data/tmp/testdox.html"/>
+	<log type="log-junit" target="data/tmp/phpunit.xml"/>
     </logging>
 </phpunit>

@@ -23,13 +23,13 @@
 
         <phingcall target="update-code" />
         <phingcall target="update-dependencies" />
-        <phingcall target="clean-caches" />
-        <phingcall target="fixtures" />
     </target>
 
     <target name="update-code">
         <exec executable="git" passthru="true" checkreturn="true">
             <arg value="pull" />
+            <arg value="origin" />
+            <arg value="master" />
         </exec>
     </target>
 
