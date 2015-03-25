@@ -9,6 +9,6 @@ branches:
     - development
 
 before_script:
-  - php -r "\$var = file_get_contents('config/config.yml-dist'); \$var = str_replace(['{auth_token}', '{client_secret}', '{client_id}'], [getenv('AUTH_TOKEN'), getenv('CLIENT_SECRET'), getenv('CLIENT_ID')], \$var); file_put_contents('config/config.yml', \$var);"
+  - php -r "\$var = file_get_contents('config/config.yml-dist'); file_put_contents('config/config.yml', \$var);"
   - composer install --prefer-dist -o
-  - php vendor/bin/phing install
+  - php vendor/bin/phing
