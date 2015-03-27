@@ -12,4 +12,4 @@ before_script:
   - cp config/config.yml-dist config/config.yml
   - composer install --prefer-dist -o
   - php vendor/bin/phing install
-  - php vendor/bin/phing build
+  - php vendor/bin/phpunit
