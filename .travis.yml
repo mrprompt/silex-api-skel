@@ -9,6 +9,6 @@ branches:
     - development
 
 before_script:
-  - php -r "\$var = file_get_contents('config/config.yml-dist'); file_put_contents('config/config.yml', \$var);"
+  - cp config/config.yml-dist config/config.yml
   - composer install --prefer-dist -o
   - php vendor/bin/phing
