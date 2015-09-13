@@ -11,6 +11,4 @@ branches:
 before_script:
   - cp config/config.yml-dist config/config.yml
   - composer install --prefer-dist -o
-  - php vendor/bin/phing install
-  - php vendor/bin/phing fixtures
   - php vendor/bin/phpunit
