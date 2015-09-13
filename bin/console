@@ -8,7 +8,7 @@
  * @author Thiago Paes <mrprompt@gmail.com>
  */
 use Knp\Provider\ConsoleServiceProvider;
-use Application\Console\Stats\Stats;
+use Skel\Console\Stats\Stats;
 
 set_time_limit(0);
 
