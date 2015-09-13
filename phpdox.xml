@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpdox xmlns="http://xml.phpdox.net/config">
+    <project name="Exib.me" source="src" workdir="tmp/doc">
+        <collector backend="parser" publiconly="false">
+            <include mask="*.php" />
+        </collector>
+
+        <generator output=".">
+            <enrich base="tmp/log">
+                <source type="phploc" />
+                <source type="checkstyle" />
+                <source type="pmd" />
+            </enrich>
+
+            <build engine="html" enabled="true" output="doc">
+                <file extension="html" />
+            </build>
+        </generator>
+    </project>
+</phpdox>

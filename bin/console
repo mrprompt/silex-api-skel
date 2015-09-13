@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of Skel system
+ *
+ * @copyright Skel
+ * @license proprietary
+ * @author Thiago Paes <mrprompt@gmail.com>
+ */
+use Knp\Provider\ConsoleServiceProvider;
+use Application\Console\Stats\Stats;
+
+set_time_limit(0);
+
+$app = require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.php';
+
+$app->register(new ConsoleServiceProvider(), array(
+    'console.name'              => 'app console',
+    'console.version'           => '0.0.0',
+    'console.project_directory' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR
+));
+
+
+$app = $app['console'];
+$app->add(new Stats());
+$app->run();

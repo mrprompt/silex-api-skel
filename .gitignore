@@ -4,3 +4,4 @@ vendor
 config/config.yml
 data/tmp/*
 data/*.sqlite
+tmp/**/*.*

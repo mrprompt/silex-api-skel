@@ -3,7 +3,7 @@
  * This file is part of Skel system
  *
  * @copyright Skel
- * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
+ * @license proprietary
  * @author Thiago Paes <mrprompt@gmail.com>
  */
 use Symfony\Component\Console\Helper\HelperSet;

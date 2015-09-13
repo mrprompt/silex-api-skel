@@ -1,0 +1,6 @@
+# configurações do log
+log:
+    name: API
+    logfile: tmp/log/api.log
+    permission: 0664
+    level: INFO

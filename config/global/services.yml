@@ -1,0 +1,10 @@
+# Services
+services:
+  users.user.repository:
+    - Skel\Repository\Users\User
+    - orm.em
+
+  users.user.service:
+    - Skel\Service\Users\User
+    - orm.em
+    - users.user.repository

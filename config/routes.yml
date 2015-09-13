@@ -1,8 +1,0 @@
-# config/routes.yml
-home:
-    prefix: /
-    resource: routes/routes.home.yml
-
-user:
-    prefix: /user
-    resource: routes/routes.user.yml

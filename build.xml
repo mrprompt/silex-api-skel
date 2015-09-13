@@ -1,108 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model xlink:href="vendor/phing/phing/etc/phing-grammar.rng"
-        type="application/xml"
-        schematypens="http://relaxng.org/ns/structure/1.0" ?>
-<project name="Silex Skel" default="build">
-    <property name="project.bindir" value="${project.basedir}/vendor/bin/" />
+<?xml-model xlink:href="vendor/phing/phing/etc/phing-grammar.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
+<project name="Exib-me" default="build">
+    <property name="project.bindir" value="${project.basedir}/vendor/bin" />
+    <property name="project.builddir" value="${project.basedir}/build" />
+    <property name="project.tmpdir" value="${project.basedir}/tmp" />
+    <property name="project.logdir" value="${project.tmpdir}/log" />
 
-    <target name="install">
-        <if>
-            <available file="config.yml" type="file" filepath="${project.basedir}/config/" />
+    <target name="build" description="Build application" depends="phpcs, phploc, pdepend, phpmd, phpcpd, test, phpdox" />
 
-            <then>
-                <echo>Config file exists! skiping...</echo>
-            </then>
-            <else>
-                <copy file="${project.basedir}/config/config.yml-dist" tofile="${project.basedir}/config/config.yml" />
-            </else>
-        </if>
-
-        <mkdir dir="${project.basedir}/data/tmp/" />
-        <touch file="${project.basedir}/data/tmp/api.log" />
-        <touch file="${project.basedir}/data/tmp/doctrine.log" />
-
-        <phingcall target="update-code" />
-        <phingcall target="update-dependencies" />
-    </target>
-
-    <target name="update-code">
-        <exec executable="git" passthru="true" checkreturn="true">
-            <arg value="pull" />
-            <arg value="origin" />
-            <arg value="master" />
+    <target name="database:create" description="Create database structure">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
+            <arg value="orm:schema-tool:create" />
         </exec>
     </target>
 
-    <target name="update-dependencies">
-        <exec executable="composer" passthru="true" checkreturn="true">
-            <arg value="install" />
-            <arg value="--prefer-dist" />
-            <arg value="-o" />
+    <target name="database:update" description="Update database structure">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
+            <arg value="orm:schema-tool:update" />
+            <arg value="--force" />
         </exec>
     </target>
 
-    <target name="clean-caches">
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+    <target name="database:migrate" description="Run migrations utility to update database">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
+            <arg value="migrations:migrate" />
+            <arg value="--no-interaction" />
+        </exec>
+    </target>
+
+    <target name="database:clean-cache" description="Cleanup doctrine cache">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
             <arg value="orm:clear-cache:metadata" />
         </exec>
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
             <arg value="orm:clear-cache:query" />
         </exec>
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
             <arg value="orm:clear-cache:result" />
         </exec>
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
             <arg value="orm:generate:proxies" />
         </exec>
     </target>
 
-    <target name="build">
-        <phingcall target="update-code" />
-        <phingcall target="update-dependencies" />
-        <phingcall target="clean-caches" />
-        <phingcall target="code-style" />
-        <phingcall target="fixtures" />
-        <phingcall target="test" />
-    </target>
-
-    <target name="fixtures">
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+    <target name="database:drop" description="Drop the database">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true">
             <arg value="orm:schema-tool:drop" />
             <arg value="--force" />
         </exec>
+    </target>
 
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
-            <arg value="orm:schema-tool:create" />
-        </exec>
-
-        <exec executable="${project.bindir}doctrine" passthru="true" checkreturn="true">
+    <target name="fixtures" depends="database:drop, database:create" description="Load fixtures into database">
+        <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true" description="Loading fixtures">
             <arg value="fixtures:load" />
-            <arg value="tests/Skel/Fixtures/" />
+            <arg value="${project.basedir}/tests/Fixtures/" />
         </exec>
     </target>
 
-    <target name="test">
-        <phingcall target="fixtures" />
+    <target name="test" description="Run all tests">
+        <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
+            <arg value="--testsuite" />
+            <arg value="Controller" />
+            <arg value="--log-junit" />
+            <arg value="${project.logdir}/junit-controller.xml" />
+            <arg value="--coverage-text=${project.logdir}/coverage-controller.log" />
+            <arg value="--coverage-clover" />
+            <arg value="${project.logdir}/coverage-controller.xml" />
+        </exec>
 
-        <exec executable="${project.bindir}phpunit" passthru="true" checkreturn="true">
-            <arg value="--stop-on-failure" />
+        <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
+            <arg value="--testsuite" />
+            <arg value="Entity" />
+            <arg value="--log-junit" />
+            <arg value="${project.logdir}/junit-entity.xml" />
+            <arg value="--coverage-text=${project.logdir}/coverage-entity.log" />
+            <arg value="--coverage-clover" />
+            <arg value="${project.logdir}/coverage-entity.xml" />
+        </exec>
+
+        <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
+            <arg value="--testsuite" />
+            <arg value="Repository" />
+            <arg value="--log-junit" />
+            <arg value="${project.logdir}/junit-repository.xml" />
+            <arg value="--coverage-text=${project.logdir}/coverage-repository.log" />
+            <arg value="--coverage-clover" />
+            <arg value="${project.logdir}/coverage-repository.xml" />
+        </exec>
+
+        <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
+            <arg value="--testsuite" />
+            <arg value="Service" />
+            <arg value="--log-junit" />
+            <arg value="${project.logdir}/junit-service.xml" />
+            <arg value="--coverage-text=${project.logdir}/coverage-service.log" />
+            <arg value="--coverage-clover" />
+            <arg value="${project.logdir}/coverage-service.xml" />
         </exec>
     </target>
 
-    <target name="code-style">
-        <exec executable="${project.bindir}phpcs" passthru="true" checkreturn="true">
+    <target name="lint" description="Perform syntax check of source code files">
+        <apply executable="php" failonerror="true" passthru="true" checkreturn="false">
+            <arg value="-l" />
+
+            <fileset dir="${project.basedir}/src/">
+                <include name="**/*.php" />
+            </fileset>
+
+            <fileset dir="${project.basedir}/tests/">
+                <include name="**/*.php" />
+            </fileset>
+        </apply>
+    </target>
+
+    <target name="phploc" description="Measure project size using PHPLOC and log result in CSV and XML format.">
+        <exec executable="${project.bindir}/phploc">
+            <arg value="--count-tests" />
+            <arg value="--log-csv" />
+            <arg path="${project.logdir}/phploc.csv" />
+            <arg value="--log-xml" />
+            <arg path="${project.logdir}/phploc.xml" />
+            <arg path="${project.basedir}/src" />
+            <arg path="${project.basedir}/tests" />
+        </exec>
+    </target>
+
+    <target name="pdepend" description="Calculate software metrics using PHP_Depend and log result in XML format.">
+        <exec executable="${project.bindir}/pdepend" passthru="true" checkreturn="false">
+            <arg value="--jdepend-xml=${project.logdir}/jdepend.xml" />
+            <arg value="--jdepend-chart=${project.logdir}/dependencies.svg" />
+            <arg value="--overview-pyramid=${project.logdir}/overview-pyramid.svg" />
+            <arg path="${project.basedir}/src" />
+        </exec>
+    </target>
+
+    <target name="phpmd" description="Perform project mess detection using PHPMD and log result in XML format.">
+        <exec executable="${project.bindir}/phpmd" passthru="true" checkreturn="false">
+            <arg path="${project.basedir}/src" />
+            <arg value="xml" />
+            <arg path="cleancode,codesize,unusedcode" />
+            <arg value="--reportfile" />
+            <arg path="${project.logdir}/pmd.xml" />
+        </exec>
+    </target>
+
+    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format.">
+        <exec executable="${project.bindir}/phpcs" passthru="true" checkreturn="false">
+            <arg value="-p" />
+            <arg value="--colors" />
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${project.logdir}/checkstyle.xml" />
             <arg value="--standard=PSR2" />
-            <arg value="--ignore=bin" />
-            <arg value="--ignore=src/Common" />
-            <arg value="--ignore=config" />
-            <arg value="--ignore=data" />
+            <arg value="--extensions=php" />
             <arg value="--ignore=public" />
             <arg value="--ignore=vendor" />
-            <arg value="--ignore=view" />
-            <arg value="--ignore=wiki" />
-            <arg value="--ignore=bootstrap.php" />
-            <arg value="--ignore=cli-config.php" />
-            <arg value="${project.basedir}" />
+
+            <arg path="${project.basedir}/src" />
+        </exec>
+    </target>
+
+    <target name="phpcpd" description="Find duplicate code using PHPCPD and log result in XML format.">
+        <exec executable="${project.bindir}/phpcpd" passthru="true" checkreturn="false">
+            <arg value="--progress" />
+            <arg value="--log-pmd" />
+            <arg path="${project.logdir}/phpcpd.xml" />
+            <arg path="${project.basedir}/src" />
+        </exec>
+    </target>
+
+    <target name="phpdox" description="Generate project documentation using phpDox">
+        <exec executable="${project.bindir}/phpdox" passthru="true" checkreturn="true">
+            <arg value="-f" />
+            <arg value="${project.basedir}/phpdox.xml" />
         </exec>
     </target>
 </project>

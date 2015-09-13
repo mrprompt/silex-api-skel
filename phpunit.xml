@@ -1,37 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.3/phpunit.xsd"
-         bootstrap="./vendor/autoload.php" colors="true" backupGlobals="false"
-         backupStaticAttributes="false" verbose="true" strict="true">
+         colors="true"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         stopOnError="true"
+         stopOnFailure="true"
+         stopOnIncomplete="false"
+         stopOnRisky="false"
+         verbose="true"
+         strict="false">
     <php>
-        <ini name="display_errors" value="On" />
-        <ini name="memory_limit" value="2047M" />
-        <env name="PHP_INI_SCAN_DIR" value="./src" />
+        <ini name="memory_limit" value="2048M" />
+
+        <const name="APPLICATION_ENV" value="testing"/>
     </php>
 
     <testsuites>
-        <testsuite name="Skel">
-            <directory>./tests</directory>
+        <testsuite name="Controller">
+            <directory>tests/Tests/Controller</directory>
+        </testsuite>
+
+        <testsuite name="Entity">
+            <directory>tests/Tests/Entity</directory>
+        </testsuite>
+
+        <testsuite name="Service">
+            <directory>tests/Tests/Service</directory>
+        </testsuite>
+
+        <testsuite name="Repository">
+            <directory>tests/Tests/Repository</directory>
+        </testsuite>
+
+        <testsuite name="Providers">
+            <directory>tests/Tests/Providers</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <blacklist>
-            <directory suffix=".php">./vendor</directory>
-            <directory suffix=".php">./bin</directory>
-            <directory suffix=".php">./src/Domain</directory>
-            <directory suffix=".php">./src/Common</directory>
+            <directory suffix=".php">vendor</directory>
+            <directory suffix=".php">public</directory>
+            <directory suffix=".php">tests/Fixtures</directory>
+            <directory suffix=".php">tests/Mocks</directory>
 
-            <file>./tests/Skel/Tests/ApplicationControllerTestCase.php</file>
-            <file>./tests/Skel/Tests/ChangeProtectedAttribute.php</file>
-            <file>./tests/Skel/Tests/CreateDatababaseMock.php</file>
+            <file>tests/Tests/ApplicationTestCase.php</file>
+            <file>tests/Tests/ApplicationTestListener.php</file>
         </blacklist>
     </filter>
 
+    <listeners>
+        <listener class="PHPUnit\Runner\CleverAndSmart\TestListener">
+            <arguments>
+                <object class="PHPUnit\Runner\CleverAndSmart\Storage\Sqlite3Storage">
+                    <arguments>
+                        <string>tmp/phpunit.sqlite</string>
+                    </arguments>
+                </object>
+            </arguments>
+        </listener>
+
+        <listener class="Skel\Tests\ApplicationTestListener" file="tests/Tests/ApplicationTestListener.php">
+        </listener>
+    </listeners>
+
     <logging>
-        <log type="coverage-text" target="data/tmp/coverage.log"/>
-        <log type="coverage-xml" target="data/tmp/coverage.xml"/>
-        <log type="testdox-text" target="data/tmp/testdox.log"/>
-	<log type="log-junit" target="data/tmp/phpunit.xml"/>
+        <log type="tap" target="tmp/log/tap.log" logIncompleteSkipped="false" />
     </logging>
 </phpunit>

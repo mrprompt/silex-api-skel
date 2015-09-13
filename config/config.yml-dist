@@ -1,25 +1,19 @@
 # Banco de dados
 database:
+  production:
     driver: pdo_sqlite
-    host: 127.0.0.1
-    dbname: test
-    user:
-    password:
-    path: data/app.sqlite
+    database: skel
+    dbname: skel
+    path: tmp/skel-production.sqlite
 
-# emails de contato
-email:
-    config:
-        host: smtp.gmail.com
-        port: 587
-        username:
-        password:
-        encryption: tls
-        auth_mode: login
+  development:
+    driver: pdo_sqlite
+    database: skel
+    dbname: skel
+    path: tmp/skel-development.sqlite
 
-# configurações do log
-log:
-    name: Default
-    logfile: data/tmp/api.log
-    permission: 0644
-    level: INFO
+  testing:
+    driver: pdo_sqlite
+    database: skel
+    dbname: skel
+    path: tmp/skel-testing.sqlite

@@ -3,10 +3,10 @@
  * This file is part of Skel system
  *
  * @copyright Skel
- * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
+ * @license proprietary
  * @author Thiago Paes <mrprompt@gmail.com>
  */
-use Skel\Application;
+use Skel\Bootstrap;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 /**
@@ -16,8 +16,8 @@ defined('DS') || define('DS', DIRECTORY_SEPARATOR);
 
 /**
  * @const string APPLICATION_ENV
-*/
-defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+ */
+defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ?: 'production'));
 
 /**
  * Auto loader
@@ -29,26 +29,29 @@ $loader->register();
 
 // Fix to read JMS annotations
 AnnotationRegistry::registerAutoloadNamespace(
-    'JMS\Serializer\Annotation', __DIR__ . '/vendor/jms/serializer/src'
+    'JMS\Serializer\Annotation', __DIR__ . DS . 'vendor' . DS . 'jms' . DS . 'serializer' . DS . 'src'
 );
 
 /**
  * Silex Application
  *
- * @var \Skel\Application $app
+ * @var Bootstrap $app
  */
-$app = new Application();
-$app->setConfigFile([
-    'config' . DS . 'config.yml',
-    'config' . DS . 'orm.yml',
-    'config' . DS . 'global.yml',
-    'config' . DS . 'services.yml',
-    'config' . DS . 'listeners.yml',
-]);
-$app->loadServices();
-$app->loadControllers();
-$app->loadListeners();
+$app = new Bootstrap(
+    [],
+    [
+        'config' . DS . 'config.yml',
+        'config' . DS . 'global' . DS . 'orm.yml',
+        'config' . DS . 'global' . DS . 'listeners.yml',
+        'config' . DS . 'global' . DS . 'services.yml',
+        'config' . DS . 'global' . DS . 'firewall.yml',
+        'config' . DS . 'global' . DS . 'logger.yml',
+    ],
+    __DIR__ . DS . 'config' . DS . 'routes' . DS . 'routes.yml'
+);
 
-$app['debug'] = APPLICATION_ENV == 'development' ? true : false;
+if (APPLICATION_ENV !== 'production') {
+    $app['debug'] = true;
+}
 
 return $app;

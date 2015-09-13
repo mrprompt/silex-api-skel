@@ -1,0 +1,52 @@
+build_settings:
+    clone_depth: 1
+    verbose: false
+    ignore:
+        - "migrations"
+        - "public"
+        - "resources"
+        - "tmp"
+        - "tests"
+        - "vendor"
+
+setup:
+    shell:
+        - "cd %BUILD_PATH% && cp config/config.yml-dist config/config.yml"
+
+    composer:
+        action: "install"
+        prefer_dist: true
+
+test:
+    lint:
+        directories:
+          - "src/"
+          - "tests/"
+          - "migrations/"
+
+    php_code_sniffer:
+        standard: "PSR2"
+        allowed_errors: -1
+        allowed_warnings: -1
+        ignore:
+            - "migrations"
+            - "public"
+            - "tests"
+            - "vendor"
+            - "bootstrap.php"
+            - "cli-config.php"
+            - "phpunit-bootstrap.php"
+            - "phpunit-shutdown.php"
+
+    php_docblock_checker:
+        path: "src"
+
+    php_loc:
+        directory: "src"
+
+    php_unit:
+
+complete:
+    clean_build:
+        remove:
+            - vendor

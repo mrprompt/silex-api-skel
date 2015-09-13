@@ -1,7 +1,0 @@
-# Mapeamentos
-mappings:
-    users:
-        type: annotation
-        namespace: Skel\Entity\Users
-        resources_namespace: Skel\Entity\Users
-        use_simple_annotation_reader: false
