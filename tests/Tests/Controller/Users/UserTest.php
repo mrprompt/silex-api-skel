@@ -1,9 +1,9 @@
 <?php
 /**
  * @author Thiago Paes <mrprompt@gmail.com>
- * @copyright proprietary
+ * @copyright free
  */
-namespace Application\Tests\Controller\Users;
+namespace Skel\Tests\Controller\Users;
 
 use Skel\Tests\ApplicationTestCase;
 

@@ -1,13 +1,14 @@
 <?php
 /**
  * @author Thiago Paes <mrprompt@gmail.com>
- * @copyright proprietary
+ * @copyright free
  */
-namespace Skel\Tests\Controller;
+namespace Skel\Tests\Controller\Home;
 
 use Skel\Tests\ApplicationTestCase;
 
 /**
+ * Home Controller Test Case
  *
  * @author Thiago Paes <mrprompt@gmail.com>
  */
