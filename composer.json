@@ -10,7 +10,7 @@
       "Skel\\": "src/",
       "Skel\\Fixtures\\": "tests/Fixtures/",
       "Skel\\Mocks\\": "tests/Mocks/",
-      "Skel\\Tests\\": "tests/Tests"
+      "Skel\\Tests\\": "tests/Tests/"
     }
   },
   "authors" : [
