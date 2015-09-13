@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is part of Skel system
+ *
+ * @copyright Skel
+ * @license GPL
+ */
 namespace Skel\Tests;
 
 use ReflectionProperty;

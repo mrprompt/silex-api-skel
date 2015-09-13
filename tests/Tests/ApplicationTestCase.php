@@ -3,7 +3,7 @@
  * This file is part of Skel system
  *
  * @copyright Skel
- * @license proprietary
+ * @license GPL
  */
 namespace Skel\Tests;
 
