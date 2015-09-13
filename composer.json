@@ -34,7 +34,6 @@
       }
   ],
   "require": {
-    "php": "~5.6",
     "ext-curl": "*",
     "ext-pdo": "*",
     "ext-pdo_mysql": "*",
