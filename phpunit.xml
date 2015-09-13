@@ -47,6 +47,7 @@
 
             <file>tests/Tests/ApplicationTestCase.php</file>
             <file>tests/Tests/ApplicationTestListener.php</file>
+            <file>tests/Tests/ChangeProtectedAttribute.php</file>
         </blacklist>
     </filter>
 
