@@ -2,6 +2,7 @@ language: php
 
 php:
   - 5.6
+  - nightly
   - hhvm
   - hhvm-nightly
 
@@ -11,6 +12,7 @@ branches:
 
 matrix:
   allow_failures:
+    - php: nightly
     - php: hhvm
     - php: hhvm-nightly
 
