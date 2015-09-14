@@ -7,8 +7,7 @@ API REST Skeleton
 
 Instalação
 ==========
-
-É necessário o PHP 5.5.x
+É necessário o PHP 5.6
 
 ## Extensões necessárias
 - curl
@@ -21,7 +20,8 @@ Instalação
 Baixe o [Composer](https://getcomposer.org/)
 
 ```
-./vendor/bin/phing install
+composer.phar install --prefer-dist -o
+cp config/config.yml-dist config/config.yml
 ```
 
 ## O arquivo config.yml
@@ -48,10 +48,8 @@ composer.phar run
 ```
 
 ## Testando
-### ATENÇÃO: a base é totalmente limpa e são carregadas as fixtures antes dos testes, então, *NÃO EXECUTE EM PRODUÇÃO*.
-
 ```
-./vendor/bin/phing test
+./vendor/bin/phpunit
 ```
 
 ## Rotas
