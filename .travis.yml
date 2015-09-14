@@ -1,21 +1,24 @@
 language: php
 
 php:
-  - "5.6"
-  - "hhvm"
-  - "nightly"
+  - 5.5
+  - 5.6
+  - hhvm
+  - hhvm-nightly
 
 branches:
   except:
     - development
 
-install:
-  - composer self-update
-  - composer update --prefer-dist
+matrix:
+  allow_failures:
+    - php: hhvm
+    - php: hhvm-nightly
 
 before_script:
+  - composer selfupdate
+  - composer install --dev --prefer-dist
   - cp config/config.yml-dist config/config.yml
-  - composer dump-autoload
 
 script:
-  - phpunit
+  - ./vendor/bin/phpunit
