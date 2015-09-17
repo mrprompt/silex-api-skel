@@ -2,8 +2,7 @@
 /**
  * This file is part of Skel system
  *
- * @copyright Skel
- * @license   proprietary
+ * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  */
 namespace Skel\Event\User\Home;
 
@@ -12,7 +11,7 @@ use Skel\Bootstrap;
 /**
  * Connection created event
  *
- * @author Romeu Mattos <romeu.smattos@gmail.com>
+ * @author Thiago Paes <mrprompt@gmail.com>
  */
 final class After
 {

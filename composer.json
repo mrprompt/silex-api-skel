@@ -34,11 +34,8 @@
       }
   ],
   "require": {
-    "ext-curl": "*",
-    "ext-pdo": "*",
-    "ext-pdo_mysql": "*",
+    "php": "~5.6",
     "ext-pdo_sqlite": "*",
-    "ext-reflection": "*",
     "ext-json": "*",
     "ext-intl": "*",
     "deralex/yaml-config-service-provider": "~1.0",

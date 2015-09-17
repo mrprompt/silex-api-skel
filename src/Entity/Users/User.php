@@ -2,7 +2,6 @@
 /**
  * This file is part of Skel system
  *
- * @copyright Skel
  * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  */
 namespace Skel\Entity\Users;
