@@ -6,14 +6,13 @@
  */
 namespace Skel;
 
-use Skel\Providers\Cors\Cors as CorsServiceProvider;
-use Skel\Providers\Header\Header as HeaderServiceProvider;
-use Skel\Providers\Hmac\Hmac as HmacServiceProvider;
 use Skel\Response as View;
 use DerAlex\Silex\YamlConfigServiceProvider;
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Dflydev\Silex\Provider\Psr0ResourceLocator\Psr0ResourceLocatorServiceProvider;
 use MrPrompt\Silex\Di\Container as DiContainerProvider;
+use MrPrompt\Silex\Cors\Cors as CorsServiceProvider;
+use MrPrompt\Silex\Hmac\Hmac as HmacServiceProvider;
 use Silex\Application as SilexApplication;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -268,7 +267,6 @@ class Bootstrap extends SilexApplication
     private function providers()
     {
         $this->register(new CorsServiceProvider());
-        $this->register(new HeaderServiceProvider());
         $this->register(new HmacServiceProvider());
     }
 }
