@@ -128,7 +128,7 @@ abstract class Entity implements EntityInterface
     public function setStatus($status)
     {
         try {
-            v::notEmpty()->int()->in([static::NEWER, static::ACTIVE, static::DELETED])->assert($status);
+            v::in([static::NEWER, static::ACTIVE, static::DELETED])->assert($status);
 
             $this->status = $status;
         } catch (AllOfException $e) {
