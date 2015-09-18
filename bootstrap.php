@@ -44,7 +44,6 @@ $app = new Bootstrap(
         'config' . DS . 'global' . DS . 'orm.yml',
         'config' . DS . 'global' . DS . 'listeners.yml',
         'config' . DS . 'global' . DS . 'services.yml',
-        'config' . DS . 'global' . DS . 'firewall.yml',
         'config' . DS . 'global' . DS . 'logger.yml',
     ],
     __DIR__ . DS . 'config' . DS . 'routes' . DS . 'routes.yml'

@@ -1,4 +1,0 @@
-# Route permissions rules
-firewall:
-  public:
-    - user.create
