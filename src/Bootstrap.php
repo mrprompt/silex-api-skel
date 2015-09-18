@@ -43,8 +43,6 @@ class Bootstrap extends SilexApplication
     {
         parent::__construct($values);
 
-        $this['debug'] = false;
-
         $this['exception_handler']->disable();
 
         $this->config($configs);
