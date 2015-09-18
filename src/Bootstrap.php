@@ -20,7 +20,6 @@ use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Routing\Loader\YamlFileLoader as RoutingFileLoader;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Translation\Loader\YamlFileLoader as TranslationFileLoader;
@@ -160,10 +159,7 @@ class Bootstrap extends SilexApplication
     private function services()
     {
         // Resource locator service
-        $this->register(
-            new Psr0ResourceLocatorServiceProvider(),
-            []
-        );
+        $this->register(new Psr0ResourceLocatorServiceProvider());
 
         // Logger Service
         $this->register(
@@ -209,24 +205,7 @@ class Bootstrap extends SilexApplication
         );
 
         // Loading service container
-        $this->register(
-            new DiContainerProvider(),
-            []
-        );
-    }
-
-    /**
-     * Check if path is a public route considering the HTTP verb.
-     *
-     * @param  Request $request
-     * @return boolean
-     */
-    private function isPublicPath(Request $request)
-    {
-        $route = $request->attributes->get('_route');
-        $paths = $this['config']['firewall']['public'];
-
-        return in_array($route, $paths);
+        $this->register(new DiContainerProvider());
     }
 
     /**
