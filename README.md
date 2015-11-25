@@ -2,6 +2,7 @@ Skeleton API
 =============
 [![Build Status](https://travis-ci.org/mrprompt/silex-api-skel.svg)](https://travis-ci.org/mrprompt/silex-api-skel)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b337e834-dd26-46fd-ad35-82e2afbc5f7d/mini.png)](https://insight.sensiolabs.com/projects/b337e834-dd26-46fd-ad35-82e2afbc5f7d)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/3bfa93fd578d476ca60ece30655df9a8)](https://www.codacy.com/app/mrprompt/silex-api-skel)
 
 API REST Skeleton
 
