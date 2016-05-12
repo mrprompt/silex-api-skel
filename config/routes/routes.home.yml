@@ -1,5 +1,0 @@
-# home route
-home.index:
-    path: /
-    defaults: { _controller: 'Skel\Controller\Home\Index::get' }
-    methods: [GET]

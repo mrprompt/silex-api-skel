@@ -1,31 +1,31 @@
 # user route
 user.home:
     path: /
-    defaults: { _controller: 'Skel\Controller\Users\User::get' }
+    defaults: { _controller: 'User\Controller\User::get' }
     methods: [GET]
 
 user.view:
     path: /{id}
-    defaults: { _controller: 'Skel\Controller\Users\User::view' }
+    defaults: { _controller: 'User\Controller\User::view' }
     methods: [GET]
     requirements:
       id: \d+
 
 user.update:
     path: /{id}
-    defaults: { _controller: 'Skel\Controller\Users\User::update' }
+    defaults: { _controller: 'User\Controller\User::update' }
     methods: [PUT]
     requirements:
       id: \d+
 
 user.delete:
     path: /{id}
-    defaults: { _controller: 'Skel\Controller\Users\User::delete' }
+    defaults: { _controller: 'User\Controller\User::delete' }
     methods: [DELETE]
     requirements:
       id: \d+
 
 user.create:
     path: /
-    defaults: { _controller: 'Skel\Controller\Users\User::create' }
+    defaults: { _controller: 'User\Controller\User::create' }
     methods: [POST]

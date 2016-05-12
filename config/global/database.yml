@@ -1,0 +1,13 @@
+# Database
+database:
+  production:
+    driver: pdo_sqlite
+    path: tmp/api.sqlite
+
+  development:
+    driver: pdo_sqlite
+    path: tmp/api.sqlite
+
+  testing:
+    driver: pdo_sqlite
+    memory: true

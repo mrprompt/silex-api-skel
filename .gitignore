@@ -1,7 +1,3 @@
-.idea/
-.c9/
+tmp/*.*
 vendor
-config/config.yml
-data/tmp/*
-data/*.sqlite
-tmp/**/*.*
+phpunit.xml

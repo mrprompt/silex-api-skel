@@ -8,7 +8,7 @@ API REST Skeleton
 
 Instalação
 ==========
-É necessário o PHP 5.6
+É necessário o PHP 7.0.x
 
 ## Extensões necessárias
 - curl
@@ -22,20 +22,13 @@ Baixe o [Composer](https://getcomposer.org/)
 
 ```
 composer.phar install --prefer-dist -o
-cp config/config.yml-dist config/config.yml
 ```
-
-## O arquivo config.yml
-Se tudo ocorreu bem, foi criado um arquivo chamado *config.yml* na pasta *config* do projeto, edite-o e preencha corretamente
-todos os dados solicitados. Eles são imprescindíveis para o correto funcionamento da aplicação.
-
-*Todos os parâmetros são obrigatórios.*
 
 ## Rodando localmente
 Você pode utilizar o [servidor web embutido](http://php.net/manual/pt_BR/features.commandline.webserver.php) no [PHP](http://www.php.net)
 para rodar localmente a API. Ou se preferir, configurar seu servidor web preferido apontando para a pasta *public*.
 ```
-composer.phar run
+php -S localhost:8080 -t public
 ```
 
 ## Rodando em modo desenvolvimento
@@ -44,8 +37,7 @@ Caso a variável não esteja definida, o valor padrão é *production*.
 Em modo de desenvolvimento, a aplicação irá mostrar todas as mensagens de erro e também de irá logar as mensagens de 
 debug.
 ```
-export APPLICATION_ENV="development"
-composer.phar run
+APPLICATION_ENV="development" php -S localhost:8080 -t public
 ```
 
 ## Testando
@@ -54,23 +46,10 @@ composer.phar run
 ```
 
 ## Rotas
-- Home
-  - Url: /
-  - Método: GET
-
 - User
   - Url: /user/[1-10]
   - Método: GET
 
 - User
   - Url: /user/
-  - Método: POST
-
-- User
-  - Url: /user/[1-10]
-  - Método: DELETE
-
-- User
-  - Url: /user/[1-10]
-  - Método: PUT
-
+  - Método: GET

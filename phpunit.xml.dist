@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         colors="true"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnRisky="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         verbose="true"
+         bootstrap="bootstrap.php"
+>
+    <php>
+        <ini name="memory_limit" value="4096M"/>
+        <const name="APPLICATION_ENV" value="testing"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Home">
+            <directory>src/Home/tests/</directory>
+        </testsuite>
+
+        <testsuite name="Common">
+            <directory>src/Common/tests/</directory>
+        </testsuite>
+
+        <testsuite name="User">
+            <directory>src/User/tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

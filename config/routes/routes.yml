@@ -1,10 +1,4 @@
 # config/routes.yml
-# home route
-home:
-    path: /
-    defaults: { _controller: 'Skel\Controller\Home\Index::get' }
-    methods: [GET]
-
 user:
     prefix: /user
     resource: routes.user.yml

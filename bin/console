@@ -1,25 +1,11 @@
 #!/usr/bin/env php
 <?php
 /**
- * This file is part of Skel system
- *
- * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
- * @author Thiago Paes <mrprompt@gmail.com>
+ * This makes our life easier when dealing with paths. Everything is relative
+ * to the application root now.
  */
-use Knp\Provider\ConsoleServiceProvider;
-use Skel\Console\Stats\Stats;
+chdir(dirname(__DIR__));
 
-set_time_limit(0);
-
-$app = require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'bootstrap.php';
-
-$app->register(new ConsoleServiceProvider(), array(
-    'console.name'              => 'app console',
-    'console.version'           => '0.0.0',
-    'console.project_directory' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR
-));
-
-
-$app = $app['console'];
-$app->add(new Stats());
+// Run Forest, run!
+$app = require 'console.php';
 $app->run();

@@ -1,7 +1,0 @@
-# ORM Mappings
-mappings:
-    users:
-        type                        : annotation
-        namespace                   : Skel
-        path                        : src/
-        use_simple_annotation_reader: false

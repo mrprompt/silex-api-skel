@@ -2,7 +2,6 @@
 <?xml-model xlink:href="vendor/phing/phing/etc/phing-grammar.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0" ?>
 <project name="Exib-me" default="build">
     <property name="project.bindir" value="${project.basedir}/vendor/bin" />
-    <property name="project.builddir" value="${project.basedir}/build" />
     <property name="project.tmpdir" value="${project.basedir}/tmp" />
     <property name="project.logdir" value="${project.tmpdir}/log" />
 
@@ -53,19 +52,18 @@
     <target name="fixtures" depends="database:drop, database:create" description="Load fixtures into database">
         <exec executable="${project.bindir}/doctrine" passthru="true" checkreturn="true" description="Loading fixtures">
             <arg value="fixtures:load" />
-            <arg value="${project.basedir}/tests/Fixtures/" />
+            <arg value="${project.basedir}/fixtures/" />
+            <arg value="--append" />
         </exec>
     </target>
 
     <target name="test" description="Run all tests">
         <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
-            <arg value="--testsuite" />
-            <arg value="Controller" />
             <arg value="--log-junit" />
             <arg value="${project.logdir}/junit-controller.xml" />
-            <arg value="--coverage-text=${project.logdir}/coverage-controller.log" />
+            <arg value="--coverage-text=${project.logdir}/coverage.log" />
             <arg value="--coverage-clover" />
-            <arg value="${project.logdir}/coverage-controller.xml" />
+            <arg value="${project.logdir}/coverage.xml" />
         </exec>
 
         <exec executable="${project.bindir}/phpunit" passthru="true" checkreturn="true">
@@ -107,7 +105,11 @@
                 <include name="**/*.php" />
             </fileset>
 
-            <fileset dir="${project.basedir}/tests/">
+            <fileset dir="${project.basedir}/migrations/">
+                <include name="**/*.php" />
+            </fileset>
+
+            <fileset dir="${project.basedir}/public/">
                 <include name="**/*.php" />
             </fileset>
         </apply>
@@ -121,7 +123,6 @@
             <arg value="--log-xml" />
             <arg path="${project.logdir}/phploc.xml" />
             <arg path="${project.basedir}/src" />
-            <arg path="${project.basedir}/tests" />
         </exec>
     </target>
 

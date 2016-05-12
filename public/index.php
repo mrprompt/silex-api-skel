@@ -1,10 +1,7 @@
 <?php
 /**
- * This file is part of Skel system
- *
  * Web initializer
  *
- * @license http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  * @author Thiago Paes <mrprompt@gmail.com>
  */
 /**
