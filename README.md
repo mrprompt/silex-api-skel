@@ -6,6 +6,14 @@ Skeleton API
 
 API REST Skeleton
 
+Este é um projeto exemplo de uso do Silex Framework para aplicações que exijam performance, fácil manutenção e escalabilidade. 
+
+Ele utiliza sub componentes como:
+
+- [Silex DI Builder](https://github.com/mrprompt/silex-di-builder)
+- [Silex CORS Provider](https://github.com/mrprompt/silex-cors-provider)
+- [Silex Router Provider](https://github.com/mrprompt/silex-router-provider)
+
 Instalação
 ==========
 É necessário o PHP 7.0.x
@@ -47,9 +55,14 @@ APPLICATION_ENV="development" php -S localhost:8080 -t public
 
 ## Rotas
 - User
-  - Url: /user/[1-10]
+  - Url: /user/1
   - Método: GET
 
 - User
   - Url: /user/
   - Método: GET
+
+## Como contribuir
+
+- faça um fork e envie um pull request
+- clique em 'star' :)

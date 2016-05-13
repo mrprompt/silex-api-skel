@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpdox xmlns="http://xml.phpdox.net/config">
-    <project name="Exib.me" source="src" workdir="tmp/doc">
+    <project name="Silex API Skel" source="src" workdir="tmp/doc">
         <collector backend="parser" publiconly="false">
             <include mask="*.php" />
         </collector>

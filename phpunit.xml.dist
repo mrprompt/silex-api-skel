@@ -20,14 +20,6 @@
     </php>
 
     <testsuites>
-        <testsuite name="Home">
-            <directory>src/Home/tests/</directory>
-        </testsuite>
-
-        <testsuite name="Common">
-            <directory>src/Common/tests/</directory>
-        </testsuite>
-
         <testsuite name="User">
             <directory>src/User/tests/</directory>
         </testsuite>

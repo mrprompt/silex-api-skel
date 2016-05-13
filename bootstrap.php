@@ -6,15 +6,11 @@ use DerAlex\Silex\YamlConfigServiceProvider;
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use MrPrompt\Silex\Cors\Cors as CorsServiceProvider;
 use MrPrompt\Silex\Di\Container as DiContainerProvider;
-use MrPrompt\Silex\Header\Header as HeaderServiceProvider;
 use MrPrompt\Silex\Router\Router as RouterServiceProvider;
-use MrPrompt\Silex\Uuid as UuidServiceProvider;
 use Palma\Silex\Provider\DoctrineORMServiceProvider;
 use Silex\Application as SilexApplication;
 use Silex\Provider\MonologServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * @const string DS
@@ -98,12 +94,6 @@ $app->register(new DiContainerProvider($app['config']['services']));
 
 // CORS provider
 $app->register(new CorsServiceProvider());
-
-// Token Header Provider
-$app->register(new HeaderServiceProvider());
-
-// Uuid Provider
-$app->register(new UuidServiceProvider());
 
 // Router Provider
 $app->register(new RouterServiceProvider(__DIR__ . DS . 'config' . DS . 'routes' . DS . 'routes.yml'));
