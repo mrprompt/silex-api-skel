@@ -1,11 +1,4 @@
 <?php
-/**
- * This file is part of Enfants system
- *
- * @copyright Enfants
- * @license proprietary
- * @author Thiago Paes <mrprompt@gmail.com>
- */
 use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\ExecuteCommand;
