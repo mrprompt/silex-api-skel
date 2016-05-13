@@ -5,6 +5,8 @@ Skeleton API
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/3bfa93fd578d476ca60ece30655df9a8)](https://www.codacy.com/app/mrprompt/silex-api-skel)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/build-status/master)
+[![Code Climate](https://codeclimate.com/github/mrprompt/silex-api-skel/badges/gpa.svg)](https://codeclimate.com/github/mrprompt/silex-api-skel)
+[![Issue Count](https://codeclimate.com/github/mrprompt/silex-api-skel/badges/issue_count.svg)](https://codeclimate.com/github/mrprompt/silex-api-skel)
 
 API REST Skeleton
 
