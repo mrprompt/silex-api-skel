@@ -14,9 +14,7 @@ matrix:
     - php: hhvm
 
 before_script:
-  - composer selfupdate
   - composer install --dev --prefer-dist
-  - cp config/config.yml-dist config/config.yml
 
 script:
   - ./vendor/bin/phpunit
