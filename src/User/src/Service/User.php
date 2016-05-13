@@ -14,7 +14,6 @@ use InvalidArgumentException;
  * User Service
  *
  * @author Thiago Paes <mrprompt@gmail.com>
- * @author Romeu Mattos <romeu.smattos@gmail.com>
  */
 final class User implements UserInterface
 {

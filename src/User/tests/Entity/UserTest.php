@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace User\Tests\Entity;
 
-use DateTime;
 use Common\ChangeProtectedAttribute;
 use User\Entity\User;
 use PHPUnit_Framework_TestCase;
@@ -13,7 +12,6 @@ use stdClass;
  * User test case.
  *
  * @author Thiago Paes <mrprompt@gmail.com>
- * @author Romeu Mattos <romeu.smattos@gmail.com>
  */
 class UserTest extends PHPUnit_Framework_TestCase
 {
@@ -26,8 +24,6 @@ class UserTest extends PHPUnit_Framework_TestCase
     {
         $obj = new stdClass();
         $obj->id = 1;
-        $obj->created = (new DateTime());
-        $obj->updated = (new DateTime())->modify('+1 day');
         $obj->name  = 'Teste';
         $obj->email = 'teste@teste.net';
 
@@ -45,8 +41,6 @@ class UserTest extends PHPUnit_Framework_TestCase
     {
         $obj = new stdClass();
         $obj->id = 'SS';
-        $obj->created = (new DateTime())->modify('+3 day');
-        $obj->updated = (new DateTime())->modify('-10 day');
         $obj->name = '';
         $obj->email = 'lalala';
 
