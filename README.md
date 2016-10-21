@@ -7,6 +7,7 @@ Skeleton API
 [![Build Status](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mrprompt/silex-api-skel/build-status/master)
 [![Code Climate](https://codeclimate.com/github/mrprompt/silex-api-skel/badges/gpa.svg)](https://codeclimate.com/github/mrprompt/silex-api-skel)
 [![Issue Count](https://codeclimate.com/github/mrprompt/silex-api-skel/badges/issue_count.svg)](https://codeclimate.com/github/mrprompt/silex-api-skel)
+[![Test Coverage](https://codeclimate.com/github/mrprompt/silex-angular-skel/badges/coverage.svg)](https://codeclimate.com/github/mrprompt/silex-angular-skel/coverage)
 
 API REST Skeleton
 
@@ -31,6 +32,14 @@ Instalação
 
 ## Instalação
 Baixe o [Composer](https://getcomposer.org/)
+
+
+Baixe o esqueleto do projeto
+```
+composer.phar create-project mrprompt/silex-api-skel some-dir --stability dev --no-interaction
+```
+
+Instale as dependências
 
 ```
 composer.phar install --prefer-dist -o

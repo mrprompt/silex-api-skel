@@ -49,7 +49,7 @@
     "respect/validation": "~1.0",
     "silex/silex": "~1.3",
     "symfony/yaml": "~2.6",
-    "knplabs/console-service-provider": "dev-master"
+    "useallfive/doctrine-data-fixtures-command": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "~5.2.10",
@@ -63,6 +63,6 @@
     "sebastian/phpcpd": "*",
     "theseer/phpdox": "dev-master",
     "fabpot/php-cs-fixer": "^1.11",
-    "useallfive/doctrine-data-fixtures-command": "dev-master"
+    "codeclimate/php-test-reporter": "dev-master"
   }
 }
