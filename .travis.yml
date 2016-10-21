@@ -17,7 +17,7 @@ before_script:
   - composer install --dev -o
 
 script:
-  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpunit --coverage-clover tmp/clover.xml
 
 on_success:
-  - ./vendor/bin/test-reporter
+  - ./vendor/bin/test-reporter --coverage-report tmp/clover.xml
