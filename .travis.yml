@@ -19,5 +19,5 @@ before_script:
 script:
   - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
-success:
+on_success:
   - ./vendor/bin/test-reporter
