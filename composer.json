@@ -58,6 +58,7 @@
     "mockery/mockery": "1.0.x-dev",
     "symfony/browser-kit": "~2.5",
     "phploc/phploc": "*",
+    "symfony/dependency-injection": "~2.4",
     "pdepend/pdepend" : "2.0.6",
     "phpmd/phpmd" : "@stable",
     "sebastian/phpcpd": "*",

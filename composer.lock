@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43bc3fbdae4d2fcd1627247390c85293",
-    "content-hash": "349351de851cf28e842afc29985867a2",
+    "hash": "a2a55060b4164bc1119863ecf8348858",
+    "content-hash": "74f45a37b9946e1ff5fb27578ce559cb",
     "packages": [
         {
             "name": "deralex/yaml-config-service-provider",
@@ -1071,18 +1071,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SilexFriends/CORS.git",
-                "reference": "5f33ba4aa551d6f4394968a3b236dba5c3895ef4"
+                "reference": "c79e8150749a7f9c19482a3879f13c2c6467e85b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SilexFriends/CORS/zipball/5f33ba4aa551d6f4394968a3b236dba5c3895ef4",
-                "reference": "5f33ba4aa551d6f4394968a3b236dba5c3895ef4",
+                "url": "https://api.github.com/repos/SilexFriends/CORS/zipball/c79e8150749a7f9c19482a3879f13c2c6467e85b",
+                "reference": "c79e8150749a7f9c19482a3879f13c2c6467e85b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5"
             },
             "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
                 "phpunit/phpunit": "^4.8",
                 "silex/silex": "1.*@dev"
             },
@@ -1111,7 +1112,7 @@
                 }
             ],
             "description": "A simple CORS provider to Silex Rest APIs based.",
-            "time": "2016-10-20 22:31:20"
+            "time": "2016-10-22 16:01:29"
         },
         {
             "name": "mrprompt/silex-di-builder",
@@ -1119,18 +1120,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SilexFriends/Di.git",
-                "reference": "b58416f3d4436cfa69743b6e5a04d14ef6ce8f61"
+                "reference": "b879558c196af66b5150c9719bcabdd9e75471f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SilexFriends/Di/zipball/b58416f3d4436cfa69743b6e5a04d14ef6ce8f61",
-                "reference": "b58416f3d4436cfa69743b6e5a04d14ef6ce8f61",
+                "url": "https://api.github.com/repos/SilexFriends/Di/zipball/b879558c196af66b5150c9719bcabdd9e75471f2",
+                "reference": "b879558c196af66b5150c9719bcabdd9e75471f2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6"
             },
             "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
                 "deralex/yaml-config-service-provider": "~1.0",
                 "phpunit/phpunit": "^4.8",
                 "silex/silex": "1.*@dev"
@@ -1152,7 +1154,7 @@
                 }
             ],
             "description": "A simple dependency injection builder to Silex",
-            "time": "2016-10-21 04:15:31"
+            "time": "2016-10-22 15:32:16"
         },
         {
             "name": "mrprompt/silex-router-provider",
@@ -1160,12 +1162,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/SilexFriends/Router.git",
-                "reference": "e093a838bc5ef3c4f3870a02ec0075a7e018aa47"
+                "reference": "c82bd5dfdbc6613b0bd1cd4f4351e712cadc8bab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SilexFriends/Router/zipball/e093a838bc5ef3c4f3870a02ec0075a7e018aa47",
-                "reference": "e093a838bc5ef3c4f3870a02ec0075a7e018aa47",
+                "url": "https://api.github.com/repos/SilexFriends/Router/zipball/c82bd5dfdbc6613b0bd1cd4f4351e712cadc8bab",
+                "reference": "c82bd5dfdbc6613b0bd1cd4f4351e712cadc8bab",
                 "shasum": ""
             },
             "require": {
@@ -1173,14 +1175,15 @@
                 "symfony/config": "~2.6"
             },
             "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
                 "phpunit/phpunit": "^4.8",
                 "silex/silex": "1.*@dev"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "SilexFriends\\Router\\": "src/Router/",
-                    "SilexFriends\\Tests\\Router\\": "tests/Router/"
+                    "SilexFriends\\Router\\": "src/",
+                    "SilexFriends\\Tests\\Router\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1196,7 +1199,7 @@
                 }
             ],
             "description": "A simple router provider to Silex with YAML",
-            "time": "2016-07-08 15:32:18"
+            "time": "2016-10-21 14:28:18"
         },
         {
             "name": "palma/DoctrineORMServiceProvider",
@@ -2259,12 +2262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c"
+                "reference": "396784cd06b91f3db576f248f2402d547a077787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
-                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/396784cd06b91f3db576f248f2402d547a077787",
+                "reference": "396784cd06b91f3db576f248f2402d547a077787",
                 "shasum": ""
             },
             "require": {
@@ -2300,7 +2303,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-02 01:57:56"
+            "time": "2016-10-21 20:59:10"
         },
         {
             "name": "useallfive/doctrine-data-fixtures-command",
@@ -2736,12 +2739,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "623bad2c8b0d11b7ff08d2767a9aa49c6001b698"
+                "reference": "c0f0edf0441f0ddcff0604407b7600a40993faf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/623bad2c8b0d11b7ff08d2767a9aa49c6001b698",
-                "reference": "623bad2c8b0d11b7ff08d2767a9aa49c6001b698",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c0f0edf0441f0ddcff0604407b7600a40993faf2",
+                "reference": "c0f0edf0441f0ddcff0604407b7600a40993faf2",
                 "shasum": ""
             },
             "require": {
@@ -2779,7 +2782,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-10-21 09:46:54"
+            "time": "2016-10-22 15:05:00"
         },
         {
             "name": "padraic/humbug_get_contents",
@@ -3023,38 +3026,87 @@
             "time": "2016-10-21 09:54:47"
         },
         {
-            "name": "phpdocumentor/reflection-docblock",
-            "version": "2.0.4",
+            "name": "phpdocumentor/reflection-common",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8"
+                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d68dbdc53dc358a816f00b300704702b2eaff7b8",
-                "reference": "d68dbdc53dc358a816f00b300704702b2eaff7b8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "dflydev/markdown": "~1.0",
-                "erusev/parsedown": "~1.0"
+                "phpunit/phpunit": "^4.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "phpDocumentor": [
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "opensource@ijaap.nl"
+                }
+            ],
+            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "FQSEN",
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "time": "2015-12-27 11:43:31"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0@dev",
+                "phpdocumentor/type-resolver": "^0.2.0",
+                "webmozart/assert": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
                         "src/"
                     ]
                 }
@@ -3066,10 +3118,58 @@
             "authors": [
                 {
                     "name": "Mike van Riel",
-                    "email": "mike.vanriel@naenius.com"
+                    "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2015-02-03 12:10:50"
+            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "time": "2016-09-30 07:12:33"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/b39c7a5b194f9ed7bd0dd345c751007a41862443",
+                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.2||^4.8.24"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "time": "2016-06-10 07:14:17"
         },
         {
             "name": "phploc/phploc",
@@ -4422,6 +4522,69 @@
             "time": "2016-09-06 10:55:00"
         },
         {
+            "name": "symfony/dependency-injection",
+            "version": "2.8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "4c8cff7eef53c78430f273b049ca5009106350a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/4c8cff7eef53c78430f273b049ca5009106350a4",
+                "reference": "4c8cff7eef53c78430f273b049ca5009106350a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "conflict": {
+                "symfony/expression-language": "<2.6"
+            },
+            "require-dev": {
+                "symfony/config": "~2.2|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/yaml": "~2.3.42|~2.7.14|~2.8.7|~3.0.7"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-10-21 20:59:10"
+        },
+        {
             "name": "symfony/dom-crawler",
             "version": "3.0.x-dev",
             "source": {
@@ -4801,6 +4964,56 @@
             ],
             "description": "A fast Documentation generator for PHP Code using standard technology (SRC, DOCBLOCK, XML and XSLT) with event based processing",
             "time": "2016-09-22 22:41:28"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c",
+                "reference": "c0c92082a2ffef8fab7941d4f6fd6a6a72ed627c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2016-10-17 06:50:33"
         }
     ],
     "aliases": [],

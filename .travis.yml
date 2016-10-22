@@ -3,7 +3,6 @@ language: php
 php:
   - 7.0
   - nightly
-  - hhvm
 
 branches:
   except:
